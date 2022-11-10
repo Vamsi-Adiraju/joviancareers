@@ -36,7 +36,6 @@
            <li>{{line}}</li>
           {% endfor %}
         </ol>
-        {{job['responsibilities']}}
       </div>
       <h3 class="text-center">Fill the Form</h3>
       <form>
@@ -49,9 +48,18 @@
           <input type="text" name="age" placeholder='34'>
         </div>
         <div class="mb-2">
+          <label>Email Address</label><br>
+          <input type="email" name="email" placeholder="virat.kohli@gmail.com">
+        </div>
+        <div class="mb-2">
           <label>Linkedin URL</label><br>
           <input type="url" name="linkedin_url" placeholder="www.linkedin/viratkohli.in">
         </div>
+        <div class="mb-2">
+          <label>Github URL</label><br>
+          <input type="gurl" name="github_url" placeholder="www.github.com/viratkohli.in">
+        </div>
+        <a class="btn btn-primary btn-lg" href="/">Submit</a>
       </form>
       {% include 'footer.html' %}
     </div>
