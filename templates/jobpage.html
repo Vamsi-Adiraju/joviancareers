@@ -9,14 +9,50 @@
     {% include 'banner.html'%}
     <div class="container">
       <h1 class='text-center'>Jovian Careers</h1>
-      <div>
-        <h3>Job Title: </h3>
+      <div class='mb-4'>
+        <h4>Job Title: </h3>
         {{job['title']}}
       </div>
-      <div>
-        <h3>Job Location:</h3>
+      <div class='mb-4'>
+        <h4>Job Location:</h3>
         {{job['location']}}
       </div>
+      <div class='mb-4'>
+        <h4 class='mb-2'>Salary :</h3>
+         {{job['salary']}}
+      </div>
+      <div class="mb-4">
+        <h4>Requirements:</h4>
+        <ul>
+          {% for line in job.requirements.split("/") %}
+           <li>{{line}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4>Responsibilities</h4>
+        <ol>
+          {% for line in job.responsibilities.split(",") %}
+           <li>{{line}}</li>
+          {% endfor %}
+        </ol>
+        {{job['responsibilities']}}
+      </div>
+      <h3 class="text-center">Fill the Form</h3>
+      <form>
+        <div class="mb-2">
+          <label>Full Name</label><br>
+          <input type="text" name="name" placeholder='Virat Kohli'>
+        </div>
+        <div class="mb-2">
+          <label>AGE:(in years)</label><br>
+          <input type="text" name="age" placeholder='34'>
+        </div>
+        <div class="mb-2">
+          <label>Linkedin URL</label><br>
+          <input type="url" name="linkedin_url" placeholder="www.linkedin/viratkohli.in">
+        </div>
+      </form>
       {% include 'footer.html' %}
     </div>
   </body>
