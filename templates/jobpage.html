@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{job['title']}}</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    {% include 'banner.html'%}
+    <div class="container">
+      <h1 class='text-center'>Jovian Careers</h1>
+      <div>
+        <h3>Job Title: </h3>
+        {{job['title']}}
+      </div>
+      <div>
+        <h3>Job Location:</h3>
+        {{job['location']}}
+      </div>
+      {% include 'footer.html' %}
+    </div>
+  </body>
+</html>
