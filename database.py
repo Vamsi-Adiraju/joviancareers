@@ -10,12 +10,6 @@ engine = create_engine(connection_string,
                 }
              })
 
-with engine.connect() as conn:
-  result = conn.execute(text("select * from jobs"))
-  lst = result.all()
-  print(type(dict(lst[0])))
-  print(dict(lst[0]))
-
 def get_jobs_rn():
   jobs=[]
   with engine.connect() as conn:
@@ -34,4 +28,11 @@ def load_job_from_db(id):
       return None
     else:
       return dict(job[0])
+
+def enter_job_to_db(data,id):
+  with engine.connect() as conn:
+    querrr = "INSERT into jobresponses(job_id,full_name,age,email) VALUES(:job_id,:full_name,:age,:email)"
+    query = text(querrr)
+    conn.execute(query,job_id=id,full_name=data['name'],age=
+                 data['age'],email=data['email'])
     
